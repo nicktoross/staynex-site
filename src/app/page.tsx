@@ -486,6 +486,66 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===================== FOUNDER ===================== */}
+      <section className="section-padding-lg">
+        <div className="container-main">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-5xl mx-auto">
+            {/* Photo — left on desktop, first on mobile */}
+            <div className="flex justify-center lg:justify-start">
+              <div className="relative">
+                {/* Replace with <Image src="/nicolas.jpg" fill alt="Nicolas Torossian" className="object-cover" /> when photo is ready */}
+                <div className="w-64 h-64 sm:w-72 sm:h-72 rounded-2xl bg-petrol-500 flex items-center justify-center shadow-xl shadow-petrol-500/20 overflow-hidden">
+                  <span className="text-6xl font-extrabold text-gold-400 select-none tracking-tight">
+                    NT
+                  </span>
+                </div>
+                <div className="absolute -bottom-3 -right-3 w-64 sm:w-72 h-64 sm:h-72 rounded-2xl border-2 border-gold-400/20 -z-10" />
+              </div>
+            </div>
+
+            {/* Text — right on desktop */}
+            <div>
+              <span className="section-label">
+                Rencontrez votre interlocuteur
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-petrol-500 leading-tight mb-2">
+                Nicolas Torossian
+              </h2>
+              <p className="text-lg font-semibold text-gold-500 mb-8">
+                Fondateur de Staynex
+              </p>
+              <div className="space-y-4 text-gray-500 leading-relaxed mb-8">
+                <p>Je suis Nicolas Torossian, fondateur de Staynex.</p>
+                <p>
+                  Apr&egrave;s plusieurs ann&eacute;es dans
+                  l&rsquo;h&ocirc;tellerie et la gestion de biens,
+                  j&rsquo;accompagne aujourd&rsquo;hui des
+                  propri&eacute;taires &agrave; maximiser leurs revenus tout
+                  en simplifiant totalement la gestion.
+                </p>
+                <p>
+                  Mon objectif&nbsp;: vous offrir une exp&eacute;rience
+                  fluide, transparente et rentable.
+                </p>
+                <p className="font-semibold text-petrol-500">
+                  Vous &eacute;changez directement avec moi, sans
+                  interm&eacute;diaire.
+                </p>
+              </div>
+              <a
+                href="https://wa.me/33781197596?text=Bonjour%20Nicolas%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20la%20gestion%20de%20mon%20bien%20et%20son%20potentiel%20de%20revenus."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-whatsapp !rounded-xl"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Parler avec moi sur WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===================== TESTIMONIALS ===================== */}
       <section className="section-padding-lg bg-white">
         <div className="container-main">

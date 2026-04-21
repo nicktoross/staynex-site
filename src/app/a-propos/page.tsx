@@ -3,8 +3,10 @@ import Link from "next/link";
 import {
   ArrowRight,
   Award,
+  Check,
   Clock,
   Eye,
+  MessageCircle,
   TrendingUp,
   Users,
   Home,
@@ -40,6 +42,87 @@ export default function AProposPage() {
               lancer, nous optimisons chaque d&eacute;tail pour maximiser votre
               rentabilit&eacute;.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Fondateur */}
+      <section className="section-padding bg-cream">
+        <div className="container-main px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Text */}
+            <div>
+              <span className="section-label">Le fondateur</span>
+              <h2 className="text-3xl sm:text-4xl font-bold text-petrol-500 mb-6">
+                Nicolas Torossian
+              </h2>
+              <div className="space-y-4 text-gray-600 leading-relaxed">
+                <p>
+                  J&rsquo;ai commenc&eacute; dans l&rsquo;univers de
+                  l&rsquo;h&ocirc;tellerie et du voyage, notamment chez
+                  Expedia, en travaillant avec des &eacute;tablissements haut
+                  de gamme.
+                </p>
+                <p>
+                  Tr&egrave;s vite, j&rsquo;ai compris que beaucoup de
+                  propri&eacute;taires passaient &agrave; c&ocirc;t&eacute;
+                  du potentiel r&eacute;el de leur bien sur Airbnb&nbsp;:
+                  mauvaise tarification, manque d&rsquo;optimisation, gestion
+                  chronophage.
+                </p>
+                <p className="font-semibold text-petrol-500">
+                  J&rsquo;ai cr&eacute;&eacute; Staynex pour
+                  r&eacute;soudre ce probl&egrave;me.
+                </p>
+                <p>
+                  {"Aujourd\u2019hui, j\u2019accompagne des propri\u00e9taires\u00a0:"}
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "Maximiser leurs revenus",
+                    "Am\u00e9liorer l\u2019exp\u00e9rience voyageur",
+                    "D\u00e9l\u00e9guer enti\u00e8rement la gestion",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="font-semibold text-petrol-500">
+                  Ma philosophie est simple&nbsp;: transparence, performance
+                  et accompagnement humain.
+                </p>
+                <p>
+                  Avec Staynex, vous travaillez directement avec moi &mdash;
+                  pas une agence anonyme.
+                </p>
+              </div>
+              <div className="mt-8">
+                <a
+                  href="https://wa.me/33781197596?text=Bonjour%20Nicolas%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20la%20gestion%20de%20mon%20bien%20et%20son%20potentiel%20de%20revenus."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-whatsapp !rounded-xl inline-flex"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  Parler avec Nicolas
+                </a>
+              </div>
+            </div>
+
+            {/* Photo */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative">
+                {/* Replace with <Image src="/nicolas.jpg" ... /> when photo is ready */}
+                <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl bg-petrol-500 flex items-center justify-center shadow-xl shadow-petrol-500/20 overflow-hidden">
+                  <span className="text-7xl font-extrabold text-gold-400 select-none tracking-tight">
+                    NT
+                  </span>
+                </div>
+                <div className="absolute -bottom-3 -right-3 w-64 sm:w-80 h-64 sm:h-80 rounded-2xl border-2 border-gold-400/20 -z-10" />
+              </div>
+            </div>
           </div>
         </div>
       </section>

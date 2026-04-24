@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -58,30 +59,46 @@ export default function AProposPage() {
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  J&rsquo;ai commenc&eacute; dans l&rsquo;univers de
-                  l&rsquo;h&ocirc;tellerie et du voyage, notamment chez
-                  Expedia, en travaillant avec des &eacute;tablissements haut
-                  de gamme.
+                  J&rsquo;ai commenc&eacute; dans le digital, en travaillant
+                  chez Microsoft puis LinkedIn, o&ugrave;
+                  j&rsquo;accompagnais des entreprises &agrave; se
+                  d&eacute;velopper gr&acirc;ce &agrave; la data, au
+                  marketing et &agrave; des strat&eacute;gies de croissance
+                  concr&egrave;tes.
                 </p>
                 <p>
-                  Tr&egrave;s vite, j&rsquo;ai compris que beaucoup de
-                  propri&eacute;taires passaient &agrave; c&ocirc;t&eacute;
-                  du potentiel r&eacute;el de leur bien sur Airbnb&nbsp;:
-                  mauvaise tarification, manque d&rsquo;optimisation, gestion
-                  chronophage.
+                  J&rsquo;ai ensuite rejoint Expedia &agrave; Paris,
+                  o&ugrave; j&rsquo;&eacute;tais en contact direct avec des
+                  h&ocirc;tels que j&rsquo;aidais &agrave;
+                  am&eacute;liorer leurs performances&nbsp;:
+                  visibilit&eacute;, taux de remplissage et revenus.
+                </p>
+                <p>
+                  C&rsquo;est l&agrave; que j&rsquo;ai vraiment compris
+                  comment fonctionnent les plateformes, les algorithmes, et
+                  surtout ce qui fait la diff&eacute;rence entre un bien qui
+                  performe et un bien qui stagne.
+                </p>
+                <p>
+                  En observant le march&eacute; Airbnb, je me suis rendu
+                  compte que beaucoup de biens &eacute;taient largement
+                  sous-exploit&eacute;s. Mauvais prix, manque
+                  d&rsquo;optimisation, gestion approximative&hellip; alors
+                  que le potentiel est souvent bien plus
+                  &eacute;lev&eacute;.
                 </p>
                 <p className="font-semibold text-petrol-500">
-                  J&rsquo;ai cr&eacute;&eacute; Staynex pour
-                  r&eacute;soudre ce probl&egrave;me.
+                  C&rsquo;est pour &ccedil;a que j&rsquo;ai
+                  cr&eacute;&eacute; Staynex.
                 </p>
                 <p>
-                  {"Aujourd\u2019hui, j\u2019accompagne des propri\u00e9taires\u00a0:"}
+                  {"Aujourd\u2019hui, j\u2019accompagne des propri\u00e9taires qui veulent faire les choses s\u00e9rieusement\u00a0:"}
                 </p>
                 <ul className="space-y-3">
                   {[
                     "Maximiser leurs revenus",
-                    "Am\u00e9liorer l\u2019exp\u00e9rience voyageur",
-                    "D\u00e9l\u00e9guer enti\u00e8rement la gestion",
+                    "Am\u00e9liorer leur performance sur Airbnb",
+                    "D\u00e9l\u00e9guer la gestion sans perdre le contr\u00f4le",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
@@ -90,12 +107,19 @@ export default function AProposPage() {
                   ))}
                 </ul>
                 <p className="font-semibold text-petrol-500">
-                  Ma philosophie est simple&nbsp;: transparence, performance
-                  et accompagnement humain.
+                  Mon approche est simple&nbsp;: analyser le potentiel
+                  r&eacute;el du bien, optimiser chaque d&eacute;tail, et
+                  suivre les performances dans le temps.
                 </p>
                 <p>
-                  Avec Staynex, vous travaillez directement avec moi &mdash;
-                  pas une agence anonyme.
+                  Avec Staynex, vous &eacute;changez directement avec
+                  moi &mdash; pas une agence, pas
+                  d&rsquo;interm&eacute;diaire.
+                </p>
+                <p>
+                  La plupart des biens que je vois aujourd&rsquo;hui
+                  pourraient g&eacute;n&eacute;rer plus, avec la bonne
+                  strat&eacute;gie.
                 </p>
               </div>
               <div className="mt-8">
@@ -114,13 +138,14 @@ export default function AProposPage() {
             {/* Photo */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
-                {/* Replace with <Image src="/nicolas.jpg" ... /> when photo is ready */}
-                <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl bg-petrol-500 flex items-center justify-center shadow-xl shadow-petrol-500/20 overflow-hidden">
-<img
-  src="/nicolas.jpg"
-  alt="Nicolas Torossian"
-  className="w-full h-full object-cover"
-/>
+                <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl overflow-hidden shadow-xl shadow-petrol-500/20">
+                  <Image
+                    src="/nicolas.jpg"
+                    alt="Nicolas Torossian founder Staynex"
+                    width={400}
+                    height={400}
+                    className="object-cover w-full h-full hover:scale-105 transition duration-300"
+                  />
                 </div>
                 <div className="absolute -bottom-3 -right-3 w-64 sm:w-80 h-64 sm:h-80 rounded-2xl border-2 border-gold-400/20 -z-10" />
               </div>

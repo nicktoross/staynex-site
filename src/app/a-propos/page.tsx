@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function AProposPage() {
   return (
-    <>
+    <main>
       {/* Hero */}
       <section className="bg-petrol-500 text-white pt-32 pb-20 md:pt-40 md:pb-24">
         <div className="container-main px-4 sm:px-6 lg:px-8">
@@ -303,6 +303,6 @@ export default function AProposPage() {
           </Link>
         </div>
       </section>
-    </>
+    </main>
   );
 }

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
@@ -116,13 +115,11 @@ export default function AProposPage() {
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
 <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl overflow-hidden shadow-xl shadow-petrol-500/20">
-  <Image
-    src="/nicolas.jpg"
-    alt="Nicolas Torossian founder Staynex"
-    width={400}
-    height={400}
-    className="object-cover w-full h-full hover:scale-105 transition duration-300"
-  />
+<img
+  src="/nicolas.jpg"
+  alt="Nicolas Torossian"
+  className="w-full h-full object-cover"
+/>
 </div>
                 </div>
                 <div className="absolute -bottom-3 -right-3 w-64 sm:w-80 h-64 sm:h-80 rounded-2xl border-2 border-gold-400/20 -z-10" />

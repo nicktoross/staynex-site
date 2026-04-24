@@ -114,13 +114,11 @@ export default function AProposPage() {
             {/* Photo */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
-<div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl overflow-hidden shadow-xl shadow-petrol-500/20">
-<img
-  src="/nicolas.jpg"
-  alt="Nicolas Torossian"
-  className="w-full h-full object-cover"
-/>
-</div>
+                {/* Replace with <Image src="/nicolas.jpg" ... /> when photo is ready */}
+                <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl bg-petrol-500 flex items-center justify-center shadow-xl shadow-petrol-500/20 overflow-hidden">
+                  <span className="text-7xl font-extrabold text-gold-400 select-none tracking-tight">
+                    NT
+                  </span>
                 </div>
                 <div className="absolute -bottom-3 -right-3 w-64 sm:w-80 h-64 sm:h-80 rounded-2xl border-2 border-gold-400/20 -z-10" />
               </div>

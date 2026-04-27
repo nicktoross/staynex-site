@@ -24,8 +24,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const from =
-      process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev";
+    const from = "Staynex <nicolas@staynex.fr>";
 
     const row = (label: string, value: string) => `
       <tr>

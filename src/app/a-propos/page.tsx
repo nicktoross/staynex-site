@@ -7,7 +7,6 @@ import {
   Check,
   Clock,
   Eye,
-  Linkedin,
   MessageCircle,
   TrendingUp,
   Users,
@@ -117,9 +116,11 @@ export default function AProposPage() {
                   href="https://www.linkedin.com/in/nicolas-torossian/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-petrol-400 hover:text-petrol-500 transition-colors duration-200"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-petrol-400 hover:text-petrol-500 hover:opacity-80 transition-colors duration-200"
                 >
-                  <Linkedin className="w-4 h-4" />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true">
+                    <path d="M20.447 20.452H16.89v-5.569c0-1.328-.027-3.037-1.85-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.347V9h3.415v1.561h.049c.476-.9 1.637-1.85 3.369-1.85 3.602 0 4.268 2.37 4.268 5.455v6.286zM5.337 7.433a1.988 1.988 0 110-3.976 1.988 1.988 0 010 3.976zM6.982 20.452H3.691V9h3.291v11.452z"/>
+                  </svg>
                   Voir mon profil LinkedIn
                 </a>
               </div>

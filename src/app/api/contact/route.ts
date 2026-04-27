@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
     const { firstName, lastName, email, phone, address, message } =
       await req.json();
 
-    if (!firstName || !lastName || !email || !message) {
+    if (!firstName || !lastName || !email || !phone || !address || !message) {
       return NextResponse.json(
         { error: "Champs obligatoires manquants." },
         { status: 400 }

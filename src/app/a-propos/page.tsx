@@ -7,6 +7,7 @@ import {
   Check,
   Clock,
   Eye,
+  Linkedin,
   MessageCircle,
   TrendingUp,
   Users,
@@ -102,7 +103,7 @@ export default function AProposPage() {
                   d&rsquo;interm&eacute;diaire.
                 </p>
               </div>
-              <div className="mt-8">
+              <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <a
                   href="https://wa.me/33781197596?text=Bonjour%20Nicolas%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20la%20gestion%20de%20mon%20bien%20et%20son%20potentiel%20de%20revenus."
                   target="_blank"
@@ -111,6 +112,15 @@ export default function AProposPage() {
                 >
                   <MessageCircle className="w-5 h-5" />
                   Parler avec Nicolas
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/nicolas-torossian/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-petrol-400 hover:text-petrol-500 transition-colors duration-200"
+                >
+                  <Linkedin className="w-4 h-4" />
+                  Voir mon profil LinkedIn
                 </a>
               </div>
             </div>

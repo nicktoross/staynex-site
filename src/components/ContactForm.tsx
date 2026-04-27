@@ -142,6 +142,7 @@ export default function ContactForm() {
             type="tel"
             id="hp-phone"
             name="phone"
+            required
             className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-petrol-500 focus:border-transparent outline-none transition-all"
             placeholder="+33 6 00 00 00 00"
           />
@@ -159,6 +160,7 @@ export default function ContactForm() {
           type="text"
           id="hp-address"
           name="address"
+          required
           className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-petrol-500 focus:border-transparent outline-none transition-all"
           placeholder="Arrondissement ou adresse compl\u00e8te"
         />

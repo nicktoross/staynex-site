@@ -129,7 +129,7 @@ const resend = new Resend(apiKey);
         { status: 500 }
       );
     }
-await fetch("https://script.google.com/macros/s/AKfycbwoP6XAXwohZkvv6nrjPH2nJGnSRndR-9Ryny9NYlQ5Coh1rKUWD6Tww4gpbaeqwL9a/exec", {
+const sheetResponse = await fetch("https://script.google.com/macros/s/AKfycbwoP6XAXwohZkvv6nrjPH2nJGnSRndR-9Ryny9NYlQ5Coh1rKUWD6Tww4gpbaeqwL9a/exec", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
@@ -143,6 +143,9 @@ await fetch("https://script.google.com/macros/s/AKfycbwoP6XAXwohZkvv6nrjPH2nJGnS
     message,
   }),
 });
+
+console.log("Google Sheet status:", sheetResponse.status);
+console.log("Google Sheet response:", await sheetResponse.text());
     return NextResponse.json({ success: true });
   } catch (err) {
     console.error("Contact API error:", err);

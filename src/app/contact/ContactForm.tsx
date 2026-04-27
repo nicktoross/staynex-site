@@ -201,19 +201,6 @@ export default function ContactForm() {
           </>
         )}
       </button>
-      <a
-        href="https://www.linkedin.com/in/nicolas-torossian/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-6 flex items-center justify-center gap-3 border border-gray-200 rounded-lg py-3 px-4 hover:bg-gray-50 transition"
-      >
-        <span className="text-sm text-gray-600">
-          Vous souhaitez en savoir plus sur moi ?
-        </span>
-        <span className="font-semibold text-petrol-600">
-          Voir mon profil LinkedIn →
-        </span>
-      </a>
     </form>
   );
 }

@@ -113,7 +113,7 @@ export default function AProposPage() {
                   Parler avec Nicolas
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/nicolas-torossian/"
+                  href="https://www.linkedin.com/in/nicolastorossian/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-medium text-petrol-400 hover:text-petrol-500 hover:opacity-80 transition-colors duration-200"

@@ -173,7 +173,7 @@ export default function ContactForm() {
           required
           rows={5}
           className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-petrol-500 focus:border-transparent outline-none transition-all resize-none"
-          placeholder="D\u00e9crivez votre bien : type, nombre de pi\u00e8ces, situation actuelle (lou\u00e9 ou non), vos objectifs..."
+          placeholder="Décrivez votre bien : type, nombre de pièces, situation actuelle (loué ou non), vos objectifs..."
         />
       </div>
 

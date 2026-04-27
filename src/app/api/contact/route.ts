@@ -129,7 +129,20 @@ const resend = new Resend(apiKey);
         { status: 500 }
       );
     }
-
+await fetch("https://script.google.com/macros/s/AKfycbwoP6XAXwohZkvv6nrjPH2nJGnSRndR-9Ryny9NYlQ5Coh1rKUWD6Tww4gpbaeqwL9a/exec", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    firstName,
+    lastName,
+    email,
+    phone,
+    address,
+    message,
+  }),
+});
     return NextResponse.json({ success: true });
   } catch (err) {
     console.error("Contact API error:", err);

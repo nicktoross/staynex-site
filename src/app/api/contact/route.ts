@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 function escapeHtml(str: string): string {
   return str
@@ -105,7 +104,16 @@ export async function POST(req: NextRequest) {
   </table>
 </body>
 </html>`;
+const apiKey = process.env.RESEND_API_KEY;
 
+if (!apiKey) {
+  return NextResponse.json(
+    { error: "RESEND_API_KEY manquante." },
+    { status: 500 }
+  );
+}
+
+const resend = new Resend(apiKey);
     const { error } = await resend.emails.send({
       from,
       to: ["ntorossian@outlook.fr", "nicolas@staynex.fr"],

@@ -118,9 +118,19 @@ export default function AProposPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-medium text-petrol-400 hover:text-petrol-500 hover:opacity-80 transition-colors duration-200"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true">
-                    <path d="M20.447 20.452H16.89v-5.569c0-1.328-.027-3.037-1.85-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.347V9h3.415v1.561h.049c.476-.9 1.637-1.85 3.369-1.85 3.602 0 4.268 2.37 4.268 5.455v6.286zM5.337 7.433a1.988 1.988 0 110-3.976 1.988 1.988 0 010 3.976zM6.982 20.452H3.691V9h3.291v11.452z"/>
-                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+  aria-hidden="true"
+>
+  <rect width="24" height="24" rx="4" fill="#0A66C2" />
+  <path
+    d="M7.1 9H4.4v8h2.7V9zM5.8 7.7c.9 0 1.5-.6 1.5-1.4 0-.8-.6-1.4-1.5-1.4s-1.5.6-1.5 1.4c0 .8.6 1.4 1.5 1.4zM19.6 17h-2.7v-4.1c0-1-.4-1.7-1.3-1.7-.7 0-1.1.5-1.3 1-.1.2-.1.5-.1.8V17h-2.7V9h2.7v1.1c.4-.6 1-1.4 2.5-1.4 1.8 0 3.1 1.2 3.1 3.8V17z"
+    fill="#ffffff"
+  />
+</svg>
                   Voir mon profil LinkedIn
                 </a>
               </div>

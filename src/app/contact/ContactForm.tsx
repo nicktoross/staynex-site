@@ -128,12 +128,15 @@ export default function ContactForm() {
             htmlFor="phone"
             className="block text-sm font-medium text-gray-700 mb-2"
           >
-            T&eacute;l&eacute;phone
+            T&eacute;l&eacute;phone *
           </label>
           <input
             type="tel"
             id="phone"
             name="phone"
+            required
+            pattern="[0-9+ ]{10,}"
+            title="Veuillez entrer un numéro valide"
             className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-petrol-500 focus:border-transparent outline-none transition-all"
             placeholder="+33 6 00 00 00 00"
           />
@@ -145,14 +148,15 @@ export default function ContactForm() {
           htmlFor="address"
           className="block text-sm font-medium text-gray-700 mb-2"
         >
-          Adresse du bien
+          Adresse du bien *
         </label>
         <input
           type="text"
           id="address"
           name="address"
+          required
           className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-petrol-500 focus:border-transparent outline-none transition-all"
-          placeholder="Arrondissement ou adresse compl\u00e8te"
+          placeholder="Arrondissement ou adresse complète"
         />
       </div>
 

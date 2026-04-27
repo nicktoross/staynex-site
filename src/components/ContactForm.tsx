@@ -136,13 +136,15 @@ export default function ContactForm() {
             htmlFor="hp-phone"
             className="block text-sm font-medium text-gray-700 mb-2"
           >
-            T&eacute;l&eacute;phone
+            T&eacute;l&eacute;phone *
           </label>
           <input
             type="tel"
             id="hp-phone"
             name="phone"
             required
+            pattern="[0-9+ ]{10,}"
+            title="Veuillez entrer un numéro valide (au moins 10 chiffres)"
             className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-petrol-500 focus:border-transparent outline-none transition-all"
             placeholder="+33 6 00 00 00 00"
           />
@@ -154,7 +156,7 @@ export default function ContactForm() {
           htmlFor="hp-address"
           className="block text-sm font-medium text-gray-700 mb-2"
         >
-          Adresse du bien
+          Adresse du bien *
         </label>
         <input
           type="text"
@@ -162,7 +164,7 @@ export default function ContactForm() {
           name="address"
           required
           className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-petrol-500 focus:border-transparent outline-none transition-all"
-          placeholder="Arrondissement ou adresse compl\u00e8te"
+          placeholder="Adresse complète"
         />
       </div>
 

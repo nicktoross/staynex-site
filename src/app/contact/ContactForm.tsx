@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { useRouter } from "next/navigation";
 import { ArrowRight, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 
 export default function ContactForm() {
+  const router = useRouter();
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -11,8 +13,6 @@ export default function ContactForm() {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    // Read FormData immediately — before any state updates or async ops
-    // prevents React event pooling from nullifying e.currentTarget
     const fd = new FormData(e.currentTarget);
     const data = {
       firstName: (fd.get("firstName") ?? "") as string,
@@ -40,7 +40,7 @@ export default function ContactForm() {
         throw new Error(body.error ?? `Erreur ${res.status} \u2014 veuillez r\u00e9essayer.`);
       }
 
-      setSent(true);
+      router.push("/merci");
     } catch (err) {
       setError(
         err instanceof Error
@@ -128,15 +128,12 @@ export default function ContactForm() {
             htmlFor="phone"
             className="block text-sm font-medium text-gray-700 mb-2"
           >
-            T&eacute;l&eacute;phone *
+            T&eacute;l&eacute;phone
           </label>
           <input
             type="tel"
             id="phone"
             name="phone"
-            required
-            pattern="[0-9+ ]{10,}"
-            title="Veuillez entrer un numéro valide"
             className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-petrol-500 focus:border-transparent outline-none transition-all"
             placeholder="+33 6 00 00 00 00"
           />
@@ -148,15 +145,14 @@ export default function ContactForm() {
           htmlFor="address"
           className="block text-sm font-medium text-gray-700 mb-2"
         >
-          Adresse du bien *
+          Adresse du bien
         </label>
         <input
           type="text"
           id="address"
           name="address"
-          required
           className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-petrol-500 focus:border-transparent outline-none transition-all"
-          placeholder="Arrondissement ou adresse complète"
+          placeholder="Arrondissement ou adresse compl\u00e8te"
         />
       </div>
 
@@ -173,7 +169,7 @@ export default function ContactForm() {
           required
           rows={5}
           className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-petrol-500 focus:border-transparent outline-none transition-all resize-none"
-          placeholder="Décrivez votre bien : type, nombre de pièces, situation actuelle (loué ou non), vos objectifs..."
+          placeholder="D\u00e9crivez votre bien : type, nombre de pi\u00e8ces, situation actuelle (lou\u00e9 ou non), vos objectifs..."
         />
       </div>
 

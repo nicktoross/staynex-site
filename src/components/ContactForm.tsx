@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { useRouter } from "next/navigation";
 import { ArrowRight, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 
 export default function ContactForm() {
+  const router = useRouter();
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -48,7 +50,7 @@ export default function ContactForm() {
       }
 
       // Only reaches here if the API returned 2xx
-      setSent(true);
+      router.push("/merci");
     } catch (err) {
       setError(
         err instanceof Error
@@ -136,15 +138,12 @@ export default function ContactForm() {
             htmlFor="hp-phone"
             className="block text-sm font-medium text-gray-700 mb-2"
           >
-            T&eacute;l&eacute;phone *
+            T&eacute;l&eacute;phone
           </label>
           <input
             type="tel"
             id="hp-phone"
             name="phone"
-            required
-            pattern="[0-9+ ]{10,}"
-            title="Veuillez entrer un numéro valide (au moins 10 chiffres)"
             className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-petrol-500 focus:border-transparent outline-none transition-all"
             placeholder="+33 6 00 00 00 00"
           />
@@ -156,15 +155,14 @@ export default function ContactForm() {
           htmlFor="hp-address"
           className="block text-sm font-medium text-gray-700 mb-2"
         >
-          Adresse du bien *
+          Adresse du bien
         </label>
         <input
           type="text"
           id="hp-address"
           name="address"
-          required
           className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-petrol-500 focus:border-transparent outline-none transition-all"
-          placeholder="Adresse complète"
+          placeholder="Arrondissement ou adresse compl\u00e8te"
         />
       </div>
 
@@ -181,7 +179,7 @@ export default function ContactForm() {
           required
           rows={5}
           className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-petrol-500 focus:border-transparent outline-none transition-all resize-none"
-          placeholder="Décrivez votre bien : type, nombre de pièces, situation actuelle (loué ou non), vos objectifs..."
+          placeholder="D\u00e9crivez votre bien : type, nombre de pi\u00e8ces, situation actuelle (lou\u00e9 ou non), vos objectifs..."
         />
       </div>
 

@@ -13,8 +13,6 @@ export default function ContactForm() {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    // Capture FormData immediately — before setState or any async op —
-    // to prevent React's event pooling from nullifying e.currentTarget.
     const fd = new FormData(e.currentTarget);
     const data = {
       firstName: (fd.get("firstName") ?? "") as string,
@@ -35,7 +33,6 @@ export default function ContactForm() {
         body: JSON.stringify(data),
       });
 
-      // Parse JSON carefully — server may return HTML on unexpected errors
       let body: { error?: string } = {};
       try {
         body = await res.json();
@@ -49,7 +46,6 @@ export default function ContactForm() {
         );
       }
 
-      // Only reaches here if the API returned 2xx
       router.push("/merci");
     } catch (err) {
       setError(

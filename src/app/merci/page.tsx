@@ -5,6 +5,10 @@ import { CheckCircle2, ArrowLeft } from "lucide-react";
 export const metadata: Metadata = {
   title: "Demande envoyée",
   description: "Votre demande a bien été envoyée. Nicolas vous recontactera sous 24h.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function MerciPage() {

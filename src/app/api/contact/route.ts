@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-
+import { missingLeadFields, missingLeadFieldsMessage } from "@/lib/leadFields";
 
 function escapeHtml(str: string): string {
   return str
@@ -13,12 +13,12 @@ function escapeHtml(str: string): string {
 
 export async function POST(req: NextRequest) {
   try {
-    const { firstName, lastName, email, phone, address, message } =
-      await req.json();
-
-    if (!firstName || !lastName || !email || !phone || !address || !message) {
+    const body = await req.json();
+    const { firstName, lastName, email, phone, address, message } = body;
+    const missing = missingLeadFields(body);
+    if (missing.length > 0) {
       return NextResponse.json(
-        { error: "Champs obligatoires manquants." },
+        { error: missingLeadFieldsMessage(missing) },
         { status: 400 }
       );
     }

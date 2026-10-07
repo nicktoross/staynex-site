@@ -1,17 +1,20 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useRef, useState, FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import { ArrowRight, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import { ArrowRight, Loader2, AlertCircle } from "lucide-react";
+import { missingLeadFields, missingLeadFieldsMessage } from "@/lib/leadFields";
 
 export default function ContactForm() {
   const router = useRouter();
   const [sending, setSending] = useState(false);
-  const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // Guards against a double submit; released only if the request fails.
+  const submitting = useRef(false);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (submitting.current) return;
 
     const fd = new FormData(e.currentTarget);
     const data = {
@@ -23,6 +26,13 @@ export default function ContactForm() {
       message:   (fd.get("message")   ?? "") as string,
     };
 
+    const missing = missingLeadFields(data);
+    if (missing.length > 0) {
+      setError(missingLeadFieldsMessage(missing));
+      return;
+    }
+
+    submitting.current = true;
     setSending(true);
     setError(null);
 
@@ -46,6 +56,7 @@ export default function ContactForm() {
         );
       }
 
+      // Success confirmed: the button stays disabled while /merci loads.
       router.push("/merci");
     } catch (err) {
       setError(
@@ -53,30 +64,13 @@ export default function ContactForm() {
           ? err.message
           : "Une erreur est survenue. Veuillez r\u00e9essayer."
       );
-    } finally {
+      submitting.current = false;
       setSending(false);
     }
   }
 
-  if (sent) {
-    return (
-      <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
-        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <CheckCircle2 className="w-7 h-7 text-green-600" />
-        </div>
-        <h3 className="text-xl font-semibold text-green-800 mb-2">
-          Demande envoy&eacute;e
-        </h3>
-        <p className="text-green-700">
-          Merci. Nicolas vous recontactera sous 24h avec votre estimation
-          personnalis&eacute;e.
-        </p>
-      </div>
-    );
-  }
-
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form method="post" onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <label
@@ -134,12 +128,13 @@ export default function ContactForm() {
             htmlFor="hp-phone"
             className="block text-sm font-medium text-gray-700 mb-2"
           >
-            T&eacute;l&eacute;phone
+            T&eacute;l&eacute;phone *
           </label>
           <input
             type="tel"
             id="hp-phone"
             name="phone"
+            required
             className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-petrol-500 focus:border-transparent outline-none transition-all"
             placeholder="+33 6 00 00 00 00"
           />
@@ -151,14 +146,15 @@ export default function ContactForm() {
           htmlFor="hp-address"
           className="block text-sm font-medium text-gray-700 mb-2"
         >
-          Adresse du bien
+          Adresse du bien *
         </label>
         <input
           type="text"
           id="hp-address"
           name="address"
+          required
           className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-petrol-500 focus:border-transparent outline-none transition-all"
-          placeholder="Arrondissement ou adresse compl\u00e8te"
+          placeholder="Arrondissement ou adresse complète"
         />
       </div>
 
@@ -175,7 +171,7 @@ export default function ContactForm() {
           required
           rows={5}
           className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-petrol-500 focus:border-transparent outline-none transition-all resize-none"
-          placeholder="D\u00e9crivez votre bien : type, nombre de pi\u00e8ces, situation actuelle (lou\u00e9 ou non), vos objectifs..."
+          placeholder="Décrivez votre bien : type, nombre de pièces, situation actuelle (loué ou non), vos objectifs..."
         />
       </div>
 

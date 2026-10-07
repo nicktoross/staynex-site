@@ -45,7 +45,7 @@ const seoFAQ = [
   {
     question: "Est-il légal de louer son appartement sur Airbnb à Paris ?",
     answer:
-      "Oui, la location courte durée est légale à Paris sous certaines conditions : pour une résidence principale, elle est limitée à 120 jours par an. Le bien doit être déclaré en mairie et disposer d'un numéro d'enregistrement. Pour une résidence secondaire, un changement d'usage est nécessaire. Staynex vous accompagne dans toutes ces démarches.",
+      "Oui, la location courte durée est légale à Paris sous certaines conditions : pour une résidence principale, elle est limitée à 90 jours par an depuis le 1er janvier 2025. Le bien doit être déclaré en mairie et disposer d'un numéro d'enregistrement. Pour une résidence secondaire, un changement d'usage est nécessaire. Staynex vous accompagne dans toutes ces démarches.",
   },
   {
     question: "Dans quels arrondissements de Paris intervenez-vous ?",
@@ -161,7 +161,7 @@ export default function ConciergeriePage() {
                 {
                   icon: Shield,
                   title: "Conformité assurée",
-                  text: "Déclaration mairie, numéro d'enregistrement, respect des 120 jours : nous gérons toute la réglementation.",
+                  text: "Déclaration mairie, numéro d'enregistrement, respect des 90 jours par an à Paris (résidence principale) : nous gérons toute la réglementation.",
                 },
               ].map((item) => (
                 <div
@@ -297,7 +297,7 @@ export default function ConciergeriePage() {
             description:
               "Conciergerie Airbnb premium à Paris. Gestion complète de votre bien, tarification dynamique et expérience voyageur exceptionnelle.",
             url: "https://staynex.fr",
-            telephone: "+33600000000",
+            telephone: "+33781197596",
             email: "nicolas@staynex.fr",
             address: {
               "@type": "PostalAddress",
@@ -307,11 +307,6 @@ export default function ConciergeriePage() {
             areaServed: {
               "@type": "City",
               name: "Paris",
-            },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "200",
             },
           }),
         }}

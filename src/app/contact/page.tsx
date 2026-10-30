@@ -3,10 +3,37 @@ import { Mail, Phone, MapPin, MessageCircle, Clock } from "lucide-react";
 import ContactForm from "./ContactForm";
 import FAQ from "@/components/FAQ";
 
+const OG_IMAGE = "https://staynex.fr/og/estimation-gratuite.png";
+
 export const metadata: Metadata = {
-  title: "Contact",
+  title: { absolute: "Estimation gratuite Airbnb à Paris | Staynex" },
   description:
-    "Estimez le potentiel de votre bien avec Staynex. Recevez une estimation gratuite de vos revenus locatifs sous 24h. Sans engagement.",
+    "Découvrez le potentiel locatif de votre appartement à Paris et en Île-de-France. Recevez une estimation gratuite et personnalisée de vos revenus Airbnb avec Staynex.",
+  alternates: { canonical: "https://staynex.fr/contact" },
+  openGraph: {
+    title: "Estimez gratuitement le potentiel de votre bien | Staynex",
+    description:
+      "Découvrez combien votre appartement pourrait générer sur Airbnb. Staynex vous propose une estimation personnalisée, gratuite et sans engagement.",
+    url: "https://staynex.fr/contact",
+    siteName: "Staynex",
+    locale: "fr_FR",
+    type: "website",
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "Staynex — Estimez le potentiel de votre bien. Estimation gratuite et sans engagement.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Estimez gratuitement le potentiel de votre bien | Staynex",
+    description:
+      "Découvrez combien votre appartement pourrait générer sur Airbnb. Estimation personnalisée, gratuite et sans engagement.",
+    images: [OG_IMAGE],
+  },
 };
 
 const quickFAQ = [
